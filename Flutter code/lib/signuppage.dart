@@ -95,7 +95,7 @@ Future <void> _checkinternet() async {
       
       //we send the json to sign up in our firebase
       final response = await http.post(
-      Uri.parse('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyA417a5xKZjx_k2y75GjwFto_WQ41pFpV0'),
+      Uri.parse('YOUR_BACKEND_SIGNUP_URL'),
       body: infoxjs
   
     );
@@ -126,7 +126,7 @@ Future <void> _checkinternet() async {
       
       //we send the verification link
       final responsever = await http.post(
-      Uri.parse('https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyA417a5xKZjx_k2y75GjwFto_WQ41pFpV0'),
+      Uri.parse('YOUR_BACKEND_SIGNUP_URL'),
       body: json.encode({
         'requestType': "VERIFY_EMAIL",
         'idToken': userid
@@ -183,7 +183,7 @@ Future <void> _checkinternet() async {
 
     //we send request to delete the account
     final responsesdele = await http.post(
-      Uri.parse('https://identitytoolkit.googleapis.com/v1/accounts:delete?key=AIzaSyA417a5xKZjx_k2y75GjwFto_WQ41pFpV0'),
+      Uri.parse('YOUR_BACKEND_SIGNUP_URL'),
       body: injsdel
     );
     if(responsesdele.statusCode == 200){
